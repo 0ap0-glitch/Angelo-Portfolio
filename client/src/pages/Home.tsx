@@ -749,9 +749,9 @@ export default function Home() {
           </div>
 
           <div className="mt-16 text-center space-y-4 bg-white/5 rounded-[2rem] p-8 border border-white/10">
-            <p className="text-lg font-semibold text-white">PR Degree • Communications Expert • Quick Learner • AI-Proficient • Emerging Tech Enthusiast</p>
+            <p className="text-lg font-semibold text-white">Communications Degree • PR Concentration • Marketing Minor • Quick Learner • AI-Proficient • Emerging Tech Enthusiast</p>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              With a degree in Public Relations and Communications, I manage brand voices, represent companies authentically, and navigate complex communications challenges. I stay ahead of industry trends, rapidly master new tools and platforms, and leverage AI and emerging technologies to create innovative solutions that drive measurable results.
+              With a Communications degree, Public Relations concentration, and Marketing minor, I manage brand voices, represent companies authentically, and navigate complex communications challenges. I stay ahead of industry trends, rapidly master new tools and platforms, and leverage AI and emerging technologies to create innovative solutions that drive measurable results.
             </p>
           </div>
         </div>
