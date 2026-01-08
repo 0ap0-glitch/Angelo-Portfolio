@@ -25,7 +25,7 @@ const socialAssets = [
   { type: "video", src: "/images/social/Untitledvideo-2.mp4", title: "Event Highlight Reel", platform: "Instagram Reels", views: "12.2K Views" },
   { type: "video", src: "/images/social/ServiceRequestApp-2.mp4", title: "App Walkthrough", platform: "TikTok", views: "Viral Content" },
   { type: "video", src: "/images/social/hSJF2a01JEsPyryLo9EbhuBqfiC7gAkAQfz69yq31rhQ.mp4", title: "Brand Story", platform: "Instagram Reels", views: "High Engagement" },
-  { type: "video", src: "/images/social/ScreenRecording_12-21-202517-10-56_1.MP4", title: "User Experience", platform: "TikTok", views: "Feature Demo" },
+
   
   // High Impact Images
   { type: "image", src: "/images/social/gridesprinter.jpg", title: "VIP Experience", platform: "Instagram Post", views: "Campaign Launch" },
@@ -53,10 +53,7 @@ const socialAssets = [
   { type: "image", src: "/images/social/Screenshot2025-12-20at2.52.41PM.png", title: "Stakeholder Comms", platform: "Corporate PR", views: "Internal" },
   { type: "image", src: "/images/social/Screenshot2025-12-21at8.01.10AM.png", title: "Meta Business Suite", platform: "Tools", views: "Dashboard" },
   
-  // Additional Assets
-  { type: "image", src: "/images/social/Image12-19-25at3_edited_edited_edited_edited_edited_edited_edited.jpg", title: "Campaign Visual", platform: "Photography", views: "Edited" },
-  { type: "image", src: "/images/social/288F0174-9585-4289-B3DC-4748B1502CE3.PNG", title: "Brand Asset", platform: "Design", views: "Mockup" },
-  { type: "image", src: "/images/social/IMG_6999.PNG", title: "Before Transformation", platform: "Case Study", views: "Archive" },
+
 ];
 
 export default function Home() {
