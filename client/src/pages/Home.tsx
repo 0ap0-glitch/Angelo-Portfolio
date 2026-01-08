@@ -633,8 +633,8 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground">Profile Visits</p>
                 </div>
                 <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                  <h4 className="text-4xl font-bold text-white mb-2">40%</h4>
-                  <p className="text-sm text-muted-foreground">Engagement Growth</p>
+                  <h4 className="text-4xl font-bold text-white mb-2">5.2K+</h4>
+                  <p className="text-sm text-muted-foreground">Qualified Leads</p>
                 </div>
               </div>
             </div>
@@ -660,6 +660,92 @@ export default function Home() {
                 </Button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tools & Capabilities Stack */}
+      <section id="tools" className="py-24 px-4 md:px-8 bg-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold">Tools & Capabilities</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              A comprehensive stack of industry-leading platforms and emerging technologies that power strategic growth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                category: "Marketing Automation & CRM",
+                tools: ["HubSpot", "Mailchimp", "ActiveCampaign"],
+                capabilities: "Lead capture, lifecycle automation, email nurture sequences, CRM database management"
+              },
+              {
+                category: "Social Media & Content",
+                tools: ["Meta Business Suite", "TikTok Creator Studio", "Later", "Buffer"],
+                capabilities: "Multi-platform scheduling, analytics tracking, content calendar management, audience insights"
+              },
+              {
+                category: "Design & Creative",
+                tools: ["Figma", "Canva Pro", "Adobe Creative Suite"],
+                capabilities: "Brand asset creation, landing page design, visual content production, brand consistency"
+              },
+              {
+                category: "Analytics & Reporting",
+                tools: ["Google Analytics", "Metabase", "Tableau"],
+                capabilities: "Performance tracking, KPI dashboards, data visualization, ROI measurement"
+              },
+              {
+                category: "Landing Pages & Web",
+                tools: ["Unbounce", "Leadpages", "WordPress", "Webflow"],
+                capabilities: "High-converting landing pages, A/B testing, form optimization, conversion funnel tracking"
+              },
+              {
+                category: "AI & Emerging Tech",
+                tools: ["ChatGPT", "Claude", "Midjourney", "Zapier"],
+                capabilities: "Content generation, audience research, image creation, workflow automation, rapid prototyping"
+              }
+            ].map((stack, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <Card className="h-full glass-panel border-white/5 hover:border-primary/30 transition-colors duration-300 rounded-[2rem] overflow-hidden group">
+                  <CardContent className="p-8 space-y-6">
+                    <h3 className="text-xl font-serif font-bold text-white">{stack.category}</h3>
+                    
+                    <div className="space-y-3">
+                      <p className="text-xs font-semibold text-primary uppercase tracking-widest">Tools</p>
+                      <div className="flex flex-wrap gap-2">
+                        {stack.tools.map(tool => (
+                          <span key={tool} className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-2 pt-4 border-t border-white/10">
+                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">What I Can Deliver</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {stack.capabilities}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center space-y-4 bg-white/5 rounded-[2rem] p-8 border border-white/10">
+            <p className="text-lg font-semibold text-white">Quick Learner • AI-Proficient • Emerging Tech Enthusiast</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              I stay ahead of industry trends and rapidly master new tools and platforms. My proficiency with AI and emerging technologies allows me to create innovative solutions and automate complex workflows that drive measurable results.
+            </p>
           </div>
         </div>
       </section>
