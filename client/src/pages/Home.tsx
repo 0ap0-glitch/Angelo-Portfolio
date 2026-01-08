@@ -223,7 +223,7 @@ export default function Home() {
                       AFTER
                     </div>
                     <img 
-                      src="/images/portfolio/gridesprinter.jpg" 
+                      src="/images/portfolio/288F0174-9585-4289-B3DC-4748B1502CE3.PNG" 
                       alt="Brand After" 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
