@@ -317,9 +317,12 @@ export default function Home() {
 
           </div>
 
-          {/* Masonry Grid for Remaining Assets */}
-          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
-            {socialAssets.filter(asset => !["Event Highlight Reel", "App Walkthrough"].includes(asset.title)).map((asset, index) => (
+          {/* Masonry Grid for Social Media Assets Only */}
+          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6 mb-24">
+            {socialAssets.filter(asset => 
+              !["Event Highlight Reel", "App Walkthrough"].includes(asset.title) && 
+              !asset.src.includes("Screenshot")
+            ).map((asset, index) => (
               <div key={index} className="break-inside-avoid">
                 <div className="bg-black/40 rounded-[2rem] border border-white/10 overflow-hidden hover:border-primary/30 transition-all duration-300 group">
                   {/* Context Header - ALWAYS ABOVE ASSET */}
@@ -374,6 +377,41 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Strategy & Documentation Archive - Compact Grid */}
+          <div className="space-y-8">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="h-px flex-1 bg-white/10"></div>
+              <h3 className="text-2xl font-serif font-bold text-white/80">Strategy Archive</h3>
+              <div className="h-px flex-1 bg-white/10"></div>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {socialAssets.filter(asset => asset.src.includes("Screenshot")).map((asset, index) => (
+                <div key={index} className="group relative bg-black/40 rounded-xl border border-white/10 overflow-hidden hover:border-primary/30 transition-all duration-300">
+                  {/* Compact Header */}
+                  <div className="absolute top-0 left-0 right-0 p-2 bg-gradient-to-b from-black/80 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p className="text-[10px] font-bold text-white truncate">{asset.title}</p>
+                  </div>
+                  
+                  {/* Image */}
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img 
+                      src={asset.src} 
+                      alt={asset.title} 
+                      className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                  
+                  {/* Footer Label */}
+                  <div className="p-2 bg-white/5 border-t border-white/5">
+                    <p className="text-[10px] text-muted-foreground truncate">{asset.platform}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
