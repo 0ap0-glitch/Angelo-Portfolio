@@ -151,6 +151,10 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('/images/background-premium.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
