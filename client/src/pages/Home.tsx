@@ -159,7 +159,7 @@ export default function Home() {
               
               <div className="space-y-6">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] border-4 border-[#D48C44] group">
-                  <img src="/images/portfolio/288F0174-9585-4289-B3DC-4748B1502CE3.PNG" alt="After Transformation" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src="/images/portfolio/gridesprinter.jpg" alt="After Transformation" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-6 left-6 bg-[#D48C44] text-white px-6 py-2 rounded-full text-base font-medium shadow-lg">After</div>
                 </div>
                 <div className="text-center">
@@ -170,7 +170,38 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Selected Work Gallery (Masonry) */}
+        {/* Digital Brand Identity Section */}
+              <div className="mb-24">
+                <h3 className="text-3xl font-bold text-[#D48C44] mb-12 text-center font-playfair">Digital Brand Identity</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="/images/portfolio/ChatGPTImageNov3,2025at03_57_08PM.png" alt="Brand Pattern" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white font-medium">Brand Pattern System</span>
+                    </div>
+                  </div>
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="/images/portfolio/ChatGPTImageOct31,2025at02_24_28PM.png" alt="Mobile App Icon" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white font-medium">App Iconography</span>
+                    </div>
+                  </div>
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="/images/portfolio/GrideLogoandMobileAppDisplay.png" alt="App Interface" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white font-medium">UI/UX Mockups</span>
+                    </div>
+                  </div>
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="/images/portfolio/B4EEC9F0-D2A9-4D40-AC29-15BFB73A1DC9.png" alt="3D Logo Asset" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white font-medium">3D Brand Assets</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Selected Work Gallery (Masonry) */}
           <div className="mb-20">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-display font-bold text-[#2A2520] mb-4">Selected Work</h2>
