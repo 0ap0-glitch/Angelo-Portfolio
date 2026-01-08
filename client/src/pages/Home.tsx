@@ -1,417 +1,225 @@
-/* Design Philosophy: Futuristic Elegance (Digital Archive) - High-end futuristic aesthetic with glassmorphism - Deep charcoal and midnight blue palette - Sophisticated typography and subtle glow effects - Focus on PR, Communications, and Growth Strategy */ 
+/* Design Philosophy: Classy Sleek (Modern Luxury) - Minimalist, high-contrast, elegant typography - Rich black and white palette - Floating portrait element - Focus on clarity and sophistication */ 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, MapPin, Shield, BarChart3, Globe, Zap, ExternalLink, Download } from "lucide-react";
+import { Mail, ArrowUpRight, Linkedin, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 font-sans">
+    <div className="min-h-screen bg-background text-foreground selection:bg-white/20 font-sans">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-background/50 backdrop-blur-xl">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <motion.h1
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-xl font-display font-bold tracking-tighter text-primary drop-shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
+        <div className="container mx-auto px-6 py-6 flex justify-between items-center">
+          <motion.a 
+            href="#"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-lg font-display font-bold tracking-tight"
           >
             ANGELO PARKER
-          </motion.h1>
-          <div className="hidden md:flex gap-8 items-center">
-            {['Strategy', 'Experience', 'Case Studies', 'Connect'].map((item) => (
+          </motion.a>
+          <div className="hidden md:flex gap-10 items-center">
+            {['Expertise', 'Work', 'About', 'Contact'].map((item) => (
               <a 
                 key={item} 
-                href={`#${item.toLowerCase().replace(' ', '-')}`} 
-                className="text-xs font-medium uppercase tracking-widest text-foreground/50 hover:text-primary transition-colors"
+                href={`#${item.toLowerCase()}`} 
+                className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors"
               >
                 {item}
               </a>
             ))}
+            <Button variant="outline" size="sm" className="rounded-full px-6 border-white/20 hover:bg-white hover:text-black transition-all">
+              Resume
+            </Button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section 
-        className="relative min-h-screen flex items-center overflow-hidden pt-20"
-        style={{
-          backgroundImage: 'url(/images/futuristic-hero.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background"></div>
-        
+      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div className="container relative z-10">
-          <div className="max-w-4xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <span className="inline-block px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6 backdrop-blur-sm">
-                Strategic Communications & Growth
-              </span>
-              <h1 className="text-7xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter mb-8 leading-[0.85]">
-                Public Relations<br/>
-                <span className="text-foreground/40">& Marketing.</span>
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-medium tracking-tight mb-8 leading-[1.1]">
+                Crafting Stories<br/>
+                <span className="text-foreground/40 italic">That Drive Growth.</span>
               </h1>
-              <p className="text-lg md:text-xl text-foreground/60 mb-12 max-w-2xl leading-relaxed font-light">
-                Engineering growth through innovative storytelling and data-driven strategy. A portfolio showcasing strategic communications, reputation management, and digital impact for forward-thinking brands.
+              <p className="text-lg md:text-xl text-foreground/60 mb-10 max-w-xl leading-relaxed font-light">
+                Strategic Communications Expert transforming brands through authentic engagement, PR, and data-driven marketing analytics.
               </p>
-              <div className="flex gap-6 flex-wrap">
+              <div className="flex gap-6">
                 <Button 
                   size="lg" 
-                  className="bg-primary text-midnight hover:bg-primary/90 rounded-none px-10 font-bold tracking-widest uppercase text-xs transition-all hover:scale-105"
-                  onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 text-sm font-medium transition-all hover:scale-105"
+                  onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Explore Work
+                  View Selected Work
                 </Button>
                 <Button 
                   size="lg" 
-                  variant="outline" 
-                  className="border-white/10 bg-white/5 hover:bg-white/10 rounded-none px-10 font-bold tracking-widest uppercase text-xs backdrop-blur-sm transition-all"
-                  onClick={() => document.getElementById('connect')?.scrollIntoView({ behavior: 'smooth' })}
+                  variant="ghost" 
+                  className="text-foreground hover:bg-white/5 rounded-full px-8 text-sm font-medium"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Get in Touch
+                  Let's Talk <ArrowUpRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
             </motion.div>
-          </div>
-        </div>
-        
-        {/* Decorative elements */}
-        <div className="absolute right-[-10%] top-[20%] w-[40%] aspect-square bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
-      </section>
 
-      {/* Strategy Section */}
-      <section id="strategy" className="py-40 relative">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative lg:h-[80vh] flex items-center justify-center"
             >
-              <div className="glass-panel aspect-square rounded-2xl overflow-hidden relative group border border-white/10 bg-white/5 backdrop-blur-sm">
-                <img 
-                  src="/images/elegant-about.png" 
-                  alt="Strategy Visual" 
-                  className="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-primary/10"></div>
-              </div>
-              
-              {/* Floating stats */}
-              <div className="absolute -bottom-10 -right-10 p-8 rounded-xl animate-float border border-white/10 bg-background/80 backdrop-blur-xl shadow-2xl">
-                <p className="text-4xl font-display font-bold text-primary mb-1">200K+</p>
-                <p className="text-[10px] uppercase tracking-widest text-foreground/40">Digital Impressions</p>
+              {/* Floating Portrait */}
+              <div className="relative w-full max-w-md aspect-[3/4] animate-float">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[2rem] transform rotate-3"></div>
+                <div className="absolute inset-0 bg-background rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl">
+                  <img 
+                    src="/images/portrait.jpg" 
+                    alt="Angelo Parker" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </motion.div>
-            
-            <div>
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-10 tracking-tight">
-                Strategic<br/>
-                <span className="text-foreground/40">Vision.</span>
-              </h2>
-              
-              <div className="space-y-8">
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-center shrink-0">
-                    <Shield className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Reputation Management</h3>
-                    <p className="text-foreground/40 leading-relaxed">
-                      Protecting and enhancing brand equity through proactive crisis management and strategic narrative control.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Global Positioning</h3>
-                    <p className="text-foreground/40 leading-relaxed">
-                      Aligning brand messaging with international market trends to maximize reach and resonance across borders.
-                    </p>
-                  </div>
-                </div>
+          </div>
+        </div>
+      </section>
 
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-center shrink-0">
-                    <BarChart3 className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Data-Driven Growth</h3>
-                    <p className="text-foreground/40 leading-relaxed">
-                      Leveraging analytics to optimize acquisition funnels and demonstrate measurable ROI for marketing initiatives.
-                    </p>
-                  </div>
-                </div>
+      {/* Expertise Section */}
+      <section id="expertise" className="py-32 border-t border-white/5">
+        <div className="container">
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-display font-medium">PR & Communications</h3>
+              <p className="text-foreground/50 leading-relaxed">
+                Architecting high-value brand narratives and managing strategic partnerships. Building sustainable reputation engines that stand the test of time.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-display font-medium">Social Media Strategy</h3>
+              <p className="text-foreground/50 leading-relaxed">
+                Building authentic communities and creating viral-worthy content. Driving meaningful engagement across platforms with over 200K+ impressions.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-display font-medium">Marketing Analytics</h3>
+              <p className="text-foreground/50 leading-relaxed">
+                Data-driven decision making and conversion optimization. Turning complex metrics into actionable insights for sustainable business growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Work */}
+      <section id="work" className="py-32 bg-white/[0.02]">
+        <div className="container">
+          <div className="flex justify-between items-end mb-20">
+            <h2 className="text-4xl md:text-5xl font-display font-medium">Featured Projects</h2>
+            <span className="hidden md:block text-sm text-foreground/40">2023 — 2025</span>
+          </div>
+
+          <div className="space-y-32">
+            {/* Project 1 */}
+            <div className="group grid md:grid-cols-2 gap-16 items-center">
+              <div className="order-2 md:order-1">
+                <span className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-4 block">Growth Strategy</span>
+                <h3 className="text-3xl font-display font-medium mb-6">Gride Technology</h3>
+                <p className="text-foreground/60 mb-8 leading-relaxed">
+                  Comprehensive brand launch and growth strategy resulting in 200K+ TikTok impressions and 18.7K profile visits. Spearheaded "Project 2026" focusing on cost-effective acquisition and operational excellence.
+                </p>
+                <ul className="space-y-4 mb-8 border-l border-white/10 pl-6">
+                  <li className="text-sm text-foreground/70">
+                    <span className="block text-xs text-foreground/30 uppercase tracking-wide mb-1">Impact</span>
+                    +15% Conversion Rates
+                  </li>
+                  <li className="text-sm text-foreground/70">
+                    <span className="block text-xs text-foreground/30 uppercase tracking-wide mb-1">Reach</span>
+                    22K+ Social Media Growth
+                  </li>
+                </ul>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-40 bg-white/[0.02] border-y border-white/5">
-        <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
-            <div>
-              <span className="text-primary text-xs font-bold uppercase tracking-widest mb-4 block">Career Trajectory</span>
-              <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter">
-                Professional<br/>
-                <span className="text-foreground/20">Milestones.</span>
-              </h2>
-            </div>
-            <p className="text-foreground/40 max-w-md text-right md:text-left leading-relaxed">
-              A timeline of impactful roles and strategic contributions across leading organizations.
-            </p>
-          </div>
-
-          <div className="grid gap-px bg-white/5 border border-white/5">
-            {[
-              {
-                role: 'Growth Strategy Lead',
-                org: 'Gride Technology',
-                year: '2025 - Present',
-                desc: 'Leading "Project 2026" marketing initiative. Engineered automated lead journeys and CRM integration. Developed AI-powered marketing stack for scalable operations. Achieved consistent month-over-month growth in rider acquisition.'
-              },
-              {
-                role: 'Public Relations Specialist',
-                org: 'Kennesaw State University',
-                year: '2024',
-                desc: 'Led comprehensive PR campaigns increasing media visibility by 40%. Managed crisis communications and stakeholder relations for university initiatives.'
-              },
-              {
-                role: 'Marketing Coordinator',
-                org: 'High Museum of Art',
-                year: '2023',
-                desc: 'Orchestrated digital marketing initiatives for major exhibitions. Collaborated with influencers and Emory University. Unified brand voice across 5 HubSpot hubs.'
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="group relative bg-background p-10 hover:bg-white/[0.02] transition-all cursor-default"
-              >
-                <div className="flex flex-col md:flex-row justify-between gap-6">
-                  <div className="max-w-xl">
-                    <h3 className="text-2xl font-display font-bold mb-2 group-hover:text-primary transition-colors">{item.role}</h3>
-                    <p className="text-xs uppercase tracking-widest text-primary/60 font-bold mb-6">{item.org}</p>
-                    <p className="text-sm text-foreground/40 leading-relaxed">{item.desc}</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-xs font-mono text-foreground/20">{item.year}</span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Section */}
-      <section id="case-studies" className="py-40 relative">
-        <div className="container">
-          <div className="mb-24">
-            <span className="text-primary text-xs font-bold uppercase tracking-widest mb-4 block">Selected Work</span>
-            <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter">
-              Case Studies<br/>
-              <span className="text-foreground/20">& Impact.</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-10">
-            {/* Case Study 1: Gride Technology */}
-            <Card className="bg-white/5 border-white/10 overflow-hidden group hover:border-primary/30 transition-all">
-              <div className="aspect-video relative overflow-hidden">
+              <div className="order-1 md:order-2 relative aspect-[4/3] overflow-hidden rounded-lg bg-white/5">
                 <img 
                   src="/images/portfolio/gridescreenshot.png" 
-                  alt="Gride Technology App" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  alt="Gride Technology" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
-                <div className="absolute bottom-6 left-6">
-                  <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest backdrop-blur-md border border-primary/20">
-                    Growth Strategy
-                  </span>
-                </div>
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-display font-bold mb-4">Gride Technology: Project 2026</h3>
-                <p className="text-foreground/40 mb-6 leading-relaxed text-sm">
-                  Spearheaded the "Project 2026" marketing plan, focusing on cost-effective acquisition and operational excellence. Implemented a data-driven funnel using HubSpot and GA4, resulting in measurable growth in rider and driver sign-ups.
-                </p>
-                <div className="flex gap-4">
-                  <div className="text-center">
-                    <p className="text-xl font-bold text-primary">Q1</p>
-                    <p className="text-[10px] uppercase text-foreground/30">Foundation</p>
-                  </div>
-                  <div className="w-px bg-white/10"></div>
-                  <div className="text-center">
-                    <p className="text-xl font-bold text-primary">High</p>
-                    <p className="text-[10px] uppercase text-foreground/30">ROI Focus</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Case Study 2: TikTok Analytics */}
-            <Card className="bg-white/5 border-white/10 overflow-hidden group hover:border-primary/30 transition-all">
-              <div className="aspect-video relative overflow-hidden">
-                <img 
-                  src="/images/portfolio/Screenshot2025-12-20at2.39.18PM.png" 
-                  alt="TikTok Analytics" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
-                <div className="absolute bottom-6 left-6">
-                  <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest backdrop-blur-md border border-primary/20">
-                    Social Analytics
-                  </span>
-                </div>
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-display font-bold mb-4">Social Media Growth</h3>
-                <p className="text-foreground/40 mb-6 leading-relaxed text-sm">
-                  Executed a consistent content strategy on TikTok leading to steady follower growth and engagement throughout 2025. Leveraged analytics to refine creative direction and optimize cross-platform campaigns.
-                </p>
-                <div className="flex gap-4">
-                  <div className="text-center">
-                    <p className="text-xl font-bold text-primary">Positive</p>
-                    <p className="text-[10px] uppercase text-foreground/30">Net Growth</p>
-                  </div>
-                  <div className="w-px bg-white/10"></div>
-                  <div className="text-center">
-                    <p className="text-xl font-bold text-primary">100%</p>
-                    <p className="text-[10px] uppercase text-foreground/30">Consistency</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Archive Section (Toolkit) */}
-      <section id="archive" className="py-40 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: 'url(/images/classy-toolkit.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background"></div>
-        
-        <div className="container relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-24">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight">Digital Stack.</h2>
-            <p className="text-sm text-foreground/40 leading-relaxed font-light">
-              A curated selection of high-performance tools and AI-powered platforms driving modern marketing operations and strategic communications.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 border border-white/5">
-            {[
-              { name: 'HubSpot', cat: 'CRM & Ops' },
-              { name: 'Surfer SEO', cat: 'Content Strategy' },
-              { name: 'Ocoya', cat: 'Social Automation' },
-              { name: 'Runway', cat: 'AI Video' },
-              { name: 'Smartly.io', cat: 'Ad Automation' },
-              { name: 'GA4', cat: 'Analytics' },
-              { name: 'PopAI', cat: 'Intelligence' },
-              { name: 'ManyChat', cat: 'Conversational' }
-            ].map((tool, i) => (
-              <div key={i} className="bg-background p-10 hover:bg-white/[0.02] transition-all group">
-                <p className="text-[10px] uppercase tracking-widest text-foreground/30 mb-4 group-hover:text-primary/60 transition-colors">{tool.cat}</p>
-                <h4 className="text-lg font-bold tracking-tight">{tool.name}</h4>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Connect Section */}
-      <section id="connect" className="py-40">
-        <div className="container">
-          <div className="p-16 md:p-24 rounded-3xl relative overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm">
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 blur-[100px]"></div>
-            
-            <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
-              <div>
-                <h2 className="text-5xl md:text-6xl font-display font-bold mb-8 tracking-tighter">
-                  Initiate<br/>
-                  <span className="text-foreground/40">Collaboration.</span>
-                </h2>
-                <p className="text-lg text-foreground/50 mb-12 font-light leading-relaxed">
-                  Ready to discuss strategic growth, reputation management, or innovative marketing initiatives? Let's build the future of your brand together.
-                </p>
-                
-                <div className="space-y-8">
-                  <a href="mailto:Marketing@gridetech.com" className="flex items-center gap-6 group">
-                    <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primary/50 transition-all">
-                      <Mail className="w-5 h-5 text-foreground/40 group-hover:text-primary transition-colors" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] uppercase tracking-widest text-foreground/30 mb-1">Direct Line</p>
-                      <p className="text-lg font-medium">Marketing@gridetech.com</p>
-                    </div>
-                  </a>
-                  
-                  <div className="flex items-center gap-6 group">
-                    <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-foreground/40" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] uppercase tracking-widest text-foreground/30 mb-1">Headquarters</p>
-                      <p className="text-lg font-medium">Smyrna, GA 30080</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="space-y-6">
-                <Card className="p-8 bg-white/5 border-white/10 rounded-2xl hover:border-primary/30 transition-all">
-                  <h3 className="text-xl font-display font-bold mb-4">Strategic Inquiry</h3>
-                  <p className="text-sm text-foreground/40 mb-8 leading-relaxed">
-                    For partnership opportunities or detailed strategic insights, please reach out via our direct channel.
-                  </p>
-                  <Button className="w-full bg-white text-midnight hover:bg-white/90 rounded-none font-bold uppercase tracking-widest text-[10px] py-6">
-                    Send Message
-                  </Button>
-                </Card>
               </div>
             </div>
+
+            {/* Project 2 */}
+            <div className="group grid md:grid-cols-2 gap-16 items-center">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white/5">
+                <img 
+                  src="/images/portfolio/Screenshot2025-12-20at2.39.18PM.png" 
+                  alt="Social Analytics" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-4 block">Analytics & Insights</span>
+                <h3 className="text-3xl font-display font-medium mb-6">Data-Driven Campaigns</h3>
+                <p className="text-foreground/60 mb-8 leading-relaxed">
+                  Executed 18 strategic campaigns showcasing growth metrics, engagement strategies, and conversion optimization. Leveraged GA4 and HubSpot to build automated lead journeys.
+                </p>
+                <ul className="space-y-4 mb-8 border-l border-white/10 pl-6">
+                  <li className="text-sm text-foreground/70">
+                    <span className="block text-xs text-foreground/30 uppercase tracking-wide mb-1">Engagement</span>
+                    8.5% Average Engagement Rate
+                  </li>
+                  <li className="text-sm text-foreground/70">
+                    <span className="block text-xs text-foreground/30 uppercase tracking-wide mb-1">Growth</span>
+                    Consistent Month-over-Month User Acquisition
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-32">
+        <div className="container max-w-4xl text-center">
+          <h2 className="text-5xl md:text-7xl font-display font-medium mb-12">Let's build something<br/>remarkable.</h2>
+          <p className="text-xl text-foreground/50 mb-16 max-w-2xl mx-auto font-light">
+            Open for opportunities in Strategic Communications, PR, and Marketing Leadership.
+          </p>
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+            <a 
+              href="mailto:Angeloparkeruwg@gmail.com" 
+              className="flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-white/90 transition-all hover:scale-105"
+            >
+              <Mail className="w-5 h-5" />
+              Angeloparkeruwg@gmail.com
+            </a>
+            <a 
+              href="#" 
+              className="flex items-center gap-3 bg-white/5 text-foreground px-8 py-4 rounded-full font-medium hover:bg-white/10 transition-all border border-white/10"
+            >
+              <Linkedin className="w-5 h-5" />
+              LinkedIn Profile
+            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-20 border-t border-white/5">
-        <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-            <div className="text-center md:text-left">
-              <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-foreground/20 mb-2">© 2025 ANGELO PARKER</p>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-foreground/10">Strategic Communications & Growth</p>
-            </div>
-            
-            <div className="flex gap-8">
-              {['LinkedIn', 'Twitter', 'Instagram'].map((social) => (
-                <a key={social} href="#" className="text-xs uppercase tracking-widest text-foreground/30 hover:text-primary transition-colors">
-                  {social}
-                </a>
-              ))}
-            </div>
+      <footer className="py-12 border-t border-white/5">
+        <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-sm text-foreground/40">© 2025 Angelo Parker. All rights reserved.</p>
+          <div className="flex gap-8">
+            <a href="#" className="text-sm text-foreground/40 hover:text-foreground transition-colors">Twitter</a>
+            <a href="#" className="text-sm text-foreground/40 hover:text-foreground transition-colors">Instagram</a>
+            <a href="#" className="text-sm text-foreground/40 hover:text-foreground transition-colors">LinkedIn</a>
           </div>
         </div>
       </footer>
