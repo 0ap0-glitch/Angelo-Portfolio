@@ -305,9 +305,8 @@ export default function Home() {
                   className="w-full h-auto"
                   poster="/images/portfolio/landing-page-thumb.jpg"
                   preload="metadata"
-                  muted
                   controls
-                  controlsList="nodownload"
+                  controlsList="nodownload nofullscreen"
                 >
                   <source src="/videos/landing-demo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
@@ -680,6 +679,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
+                category: "Public Relations & Communications",
+                tools: ["Crisis Management", "Brand Advocacy", "Company Representation", "Voice Strategy"],
+                capabilities: "Crisis communication planning, brand voice development, company advocacy, spokesperson training, stakeholder relations, media relations"
+              },
+              {
                 category: "Marketing Automation & CRM",
                 tools: ["HubSpot", "Mailchimp", "ActiveCampaign"],
                 capabilities: "Lead capture, lifecycle automation, email nurture sequences, CRM database management"
@@ -745,9 +749,9 @@ export default function Home() {
           </div>
 
           <div className="mt-16 text-center space-y-4 bg-white/5 rounded-[2rem] p-8 border border-white/10">
-            <p className="text-lg font-semibold text-white">Quick Learner • AI-Proficient • Emerging Tech Enthusiast</p>
+            <p className="text-lg font-semibold text-white">PR Degree • Communications Expert • Quick Learner • AI-Proficient • Emerging Tech Enthusiast</p>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              I stay ahead of industry trends and rapidly master new tools and platforms. My proficiency with AI and emerging technologies allows me to create innovative solutions and automate complex workflows that drive measurable results.
+              With a degree in Public Relations and Communications, I manage brand voices, represent companies authentically, and navigate complex communications challenges. I stay ahead of industry trends, rapidly master new tools and platforms, and leverage AI and emerging technologies to create innovative solutions that drive measurable results.
             </p>
           </div>
         </div>
