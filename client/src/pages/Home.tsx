@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Linkedin, Mail, ExternalLink, Download, Play, Instagram, Facebook, BarChart3, LayoutGrid, FileText } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { ArrowRight, Linkedin, Mail, ExternalLink, Download, Play, Instagram, Facebook, BarChart3, LayoutGrid, FileText, X, ZoomIn, ZoomOut, Move } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -52,11 +53,54 @@ const socialAssets = [
   { type: "image", src: "/images/social/Screenshot2025-12-20at2.52.18PM.png", title: "Crisis Management", platform: "PR Protocol", views: "Risk Mitigation" },
   { type: "image", src: "/images/social/Screenshot2025-12-20at2.52.41PM.png", title: "Stakeholder Comms", platform: "Corporate PR", views: "Internal" },
   { type: "image", src: "/images/social/Screenshot2025-12-21at8.01.10AM.png", title: "Meta Business Suite", platform: "Tools", views: "Dashboard" },
+  { type: "image", src: "/images/social/marketing-tactics-barcode.png", title: "Marketing Tactics", platform: "Campaign Ideas", views: "Tactics" },
+  { type: "image", src: "/images/social/google-survey-form.png", title: "Feedback Form", platform: "Survey", views: "Feedback" },
   
 
 ];
 
 export default function Home() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  const openLightbox = (src: string) => {
+    setSelectedImage(src);
+    setLightboxOpen(true);
+    setScale(1);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setSelectedImage(null);
+  };
+
+  const handleZoomIn = () => setScale(prev => Math.min(prev + 0.5, 4));
+  const handleZoomOut = () => setScale(prev => Math.max(prev - 0.5, 1));
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (scale > 1) {
+      setIsDragging(true);
+      setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && scale > 1) {
+      setPosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y
+      });
+    }
+  };
+
+  const handleMouseUp = () => setIsDragging(false);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -65,6 +109,53 @@ export default function Home() {
   };
 
   return (
+    <>
+      {/* Lightbox Overlay */}
+      {lightboxOpen && selectedImage && (
+        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center overflow-hidden">
+          {/* Controls */}
+          <div className="absolute top-4 right-4 z-50 flex items-center gap-4">
+            <div className="bg-white/10 backdrop-blur-md rounded-full p-2 flex items-center gap-2 border border-white/20">
+              <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full hover:bg-white/20 text-white" onClick={handleZoomOut}>
+                <ZoomOut className="h-4 w-4" />
+              </Button>
+              <span className="text-xs font-mono text-white w-12 text-center">{Math.round(scale * 100)}%</span>
+              <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full hover:bg-white/20 text-white" onClick={handleZoomIn}>
+                <ZoomIn className="h-4 w-4" />
+              </Button>
+            </div>
+            <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20" onClick={closeLightbox}>
+              <X className="h-5 w-5" />
+            </Button>
+          </div>
+
+          {/* Image Container */}
+          <div 
+            className="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing"
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+          >
+            <img 
+              ref={imageRef}
+              src={selectedImage} 
+              alt="Strategy Detail" 
+              className="max-w-[90vw] max-h-[90vh] object-contain transition-transform duration-100 ease-out"
+              style={{ 
+                transform: `scale(${scale}) translate(${position.x / scale}px, ${position.y / scale}px)`,
+                cursor: scale > 1 ? 'grab' : 'default'
+              }}
+              draggable={false}
+            />
+          </div>
+          
+          {/* Instructions */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 text-xs text-white/70 pointer-events-none">
+            {scale === 1 ? "Click zoom buttons to explore" : "Drag to pan around"}
+          </div>
+        </div>
+      )}
     <div className="w-full overflow-x-hidden bg-[#02040a] text-white">
       {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center pt-24 pb-12 px-4 md:px-8 relative">
@@ -386,21 +477,30 @@ export default function Home() {
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {socialAssets.filter(asset => asset.src.includes("Screenshot")).map((asset, index) => (
-                <div key={index} className="group relative bg-black/40 rounded-xl border border-white/10 overflow-hidden hover:border-primary/30 transition-all duration-300">
+              {socialAssets.filter(asset => asset.src.includes("Screenshot") || asset.src.includes("marketing-tactics") || asset.src.includes("google-survey")).map((asset, index) => (
+                <div 
+                  key={index} 
+                  className="group relative bg-black/40 rounded-xl border border-white/10 overflow-hidden hover:border-primary/30 transition-all duration-300 cursor-pointer"
+                  onClick={() => openLightbox(asset.src)}
+                >
                   {/* Compact Header */}
                   <div className="absolute top-0 left-0 right-0 p-2 bg-gradient-to-b from-black/80 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity">
                     <p className="text-[10px] font-bold text-white truncate">{asset.title}</p>
                   </div>
                   
                   {/* Image */}
-                  <div className="aspect-[4/3] overflow-hidden">
+                  <div className="aspect-[4/3] overflow-hidden relative">
                     <img 
                       src={asset.src} 
                       alt={asset.title} 
                       className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                       loading="lazy"
                     />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-black/60 backdrop-blur-sm p-2 rounded-full border border-white/20">
+                        <ZoomIn className="w-4 h-4 text-white" />
+                      </div>
+                    </div>
                   </div>
                   
                   {/* Footer Label */}
@@ -525,5 +625,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }
