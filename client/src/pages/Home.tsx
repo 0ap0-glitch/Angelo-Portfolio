@@ -365,9 +365,19 @@ export default function Home() {
             </div>
 
             {/* Column 3: Video Content (Reels/TikToks) */}
-            <div className="space-y-8">
-              <div className="bg-white/5 rounded-[2rem] p-2 border border-white/10 hover:border-primary/30 transition-colors">
-                <div className="aspect-[9/16] rounded-[1.5rem] overflow-hidden bg-black relative group">
+            <div className="space-y-12">
+              {/* Video 1 */}
+              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-orange-500 flex items-center justify-center text-white font-bold text-xs">
+                    IG
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm">Event Highlight Reel</h4>
+                    <p className="text-xs text-muted-foreground">Instagram Reels • 12.2K Views</p>
+                  </div>
+                </div>
+                <div className="aspect-[9/16] rounded-[1.5rem] overflow-hidden bg-black relative group shadow-lg">
                   <video 
                     src="/images/social-video-1.mp4" 
                     className="w-full h-full object-cover"
@@ -375,14 +385,24 @@ export default function Home() {
                     playsInline
                     poster="/images/social-sprinter.jpg"
                   />
-                  <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white pointer-events-none">
-                    Reels
-                  </div>
                 </div>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Capturing the energy of live events to drive bookings and brand excitement.
+                </p>
               </div>
 
-              <div className="bg-white/5 rounded-[2rem] p-2 border border-white/10 hover:border-primary/30 transition-colors">
-                <div className="aspect-[9/16] rounded-[1.5rem] overflow-hidden bg-black relative group">
+              {/* Video 2 */}
+              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-bold text-xs border border-white/20">
+                    TK
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm">Service Walkthrough</h4>
+                    <p className="text-xs text-muted-foreground">TikTok • Viral Content</p>
+                  </div>
+                </div>
+                <div className="aspect-[9/16] rounded-[1.5rem] overflow-hidden bg-black relative group shadow-lg">
                   <video 
                     src="/images/social-video-2.mp4" 
                     className="w-full h-full object-cover"
@@ -390,7 +410,82 @@ export default function Home() {
                     playsInline
                   />
                 </div>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Educational content demonstrating app features and user benefits.
+                </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Impact & Analytics Section */}
+      <section id="analytics" className="py-24 px-4 md:px-8 bg-black/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <Badge variant="outline" className="rounded-full px-4 py-1 border-accent/30 text-accent tracking-widest text-xs uppercase">
+                Performance Report
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold">
+                Strategic Impact <br />
+                <span className="text-gradient-gold">& Analytics</span>
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                A comprehensive breakdown of marketing performance, highlighting key growth metrics, audience engagement trends, and the tangible ROI of strategic campaigns.
+              </p>
+              
+              {/* KPI Grid */}
+              <div className="grid grid-cols-2 gap-6 pt-4">
+                <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
+                  <h4 className="text-4xl font-bold text-white mb-2">40%</h4>
+                  <p className="text-sm text-muted-foreground">Engagement Increase</p>
+                </div>
+                <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
+                  <h4 className="text-4xl font-bold text-white mb-2">200K+</h4>
+                  <p className="text-sm text-muted-foreground">Total Impressions</p>
+                </div>
+                <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
+                  <h4 className="text-4xl font-bold text-white mb-2">18.7K</h4>
+                  <p className="text-sm text-muted-foreground">Profile Visits</p>
+                </div>
+                <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
+                  <h4 className="text-4xl font-bold text-white mb-2">Top 1%</h4>
+                  <p className="text-sm text-muted-foreground">Industry Benchmark</p>
+                </div>
+              </div>
+
+              <Button 
+                size="lg" 
+                className="rounded-full bg-white text-black hover:bg-white/90 px-8 h-12 text-base mt-4"
+                onClick={() => window.open("/marketing-recap-2025.pdf", "_blank")}
+              >
+                <Download className="mr-2 h-4 w-4" /> Download Full Report
+              </Button>
+            </div>
+
+            {/* Report Preview Visual */}
+            <div className="relative group cursor-pointer" onClick={() => window.open("/marketing-recap-2025.pdf", "_blank")}>
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-[2.5rem] blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+              <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm">
+                {/* PDF Cover Preview */}
+                <img 
+                  src="/images/report/page_1.jpg" 
+                  alt="2025 Marketing Recap Report Cover" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 text-white font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <ExternalLink className="w-4 h-4" /> View Report
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent rounded-full blur-[40px] opacity-20" />
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary rounded-full blur-[40px] opacity-20" />
             </div>
           </div>
         </div>
