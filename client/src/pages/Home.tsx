@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Linkedin, Mail, ExternalLink, Download, Play, Instagram, Facebook, BarChart3, LayoutGrid } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, ExternalLink, Download, Play, Instagram, Facebook, BarChart3, LayoutGrid, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -224,9 +224,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <Button variant="outline" className="rounded-full border-white/10 hover:bg-white/5 mt-8" onClick={() => window.open("/marketing-recap-2025.pdf", "_blank")}>
-                <Download className="mr-2 h-4 w-4" /> View Marketing Plan
-              </Button>
+
             </div>
 
             <div className="relative">
@@ -448,41 +446,31 @@ export default function Home() {
                 </div>
                 <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
                   <h4 className="text-4xl font-bold text-white mb-2">Top 1%</h4>
-                  <p className="text-sm text-muted-foreground">Industry Benchmark</p>
+                  <p className="text-sm text-muted-foreground">Industry Standard</p>
                 </div>
               </div>
-
-              <Button 
-                size="lg" 
-                className="rounded-full bg-white text-black hover:bg-white/90 px-8 h-12 text-base mt-4"
-                onClick={() => window.open("/marketing-recap-2025.pdf", "_blank")}
-              >
-                <Download className="mr-2 h-4 w-4" /> Download Full Report
-              </Button>
             </div>
 
-            {/* Report Preview Visual */}
-            <div className="relative group cursor-pointer" onClick={() => window.open("/marketing-recap-2025.pdf", "_blank")}>
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-[2.5rem] blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
-              <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm">
-                {/* PDF Cover Preview */}
-                <img 
-                  src="/images/social/Screenshot2025-12-20at2.24.54PM.png" 
-                  alt="2025 Marketing Recap Report Cover" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 text-white font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <ExternalLink className="w-4 h-4" /> View Report
-                  </div>
+            {/* New Marketing Plan Section */}
+            <div className="relative">
+              <div className="bg-white/5 rounded-[2.5rem] p-8 border border-white/10 flex flex-col items-center text-center space-y-6">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+                  <FileText className="w-8 h-8" />
                 </div>
+                <div>
+                  <h3 className="text-2xl font-serif font-bold mb-2">2026 Marketing Plan</h3>
+                  <p className="text-muted-foreground text-sm max-w-xs mx-auto">
+                    Executive summary and strategic roadmap for the upcoming fiscal year.
+                  </p>
+                </div>
+                <Button 
+                  size="lg" 
+                  className="rounded-full bg-white text-black hover:bg-white/90 px-8 h-12 text-base w-full md:w-auto"
+                  onClick={() => window.open("/PROJECT2026-GRIDEMARKETINGPLANExecutiveSummaryGri.pdf", "_blank")}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" /> View Strategy
+                </Button>
               </div>
-              
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent rounded-full blur-[40px] opacity-20" />
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary rounded-full blur-[40px] opacity-20" />
             </div>
           </div>
         </div>
