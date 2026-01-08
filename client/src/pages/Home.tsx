@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Linkedin, Mail, ExternalLink, Download } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, ExternalLink, Download, Play, Instagram, Facebook, BarChart3, LayoutGrid } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -19,6 +19,46 @@ const staggerContainer = {
   }
 };
 
+// Social Media Assets Data
+const socialAssets = [
+  // Videos
+  { type: "video", src: "/images/social/Untitledvideo-2.mp4", title: "Event Highlight Reel", platform: "Instagram Reels", views: "12.2K Views" },
+  { type: "video", src: "/images/social/ServiceRequestApp-2.mp4", title: "App Walkthrough", platform: "TikTok", views: "Viral Content" },
+  { type: "video", src: "/images/social/hSJF2a01JEsPyryLo9EbhuBqfiC7gAkAQfz69yq31rhQ.mp4", title: "Brand Story", platform: "Instagram Reels", views: "High Engagement" },
+  { type: "video", src: "/images/social/ScreenRecording_12-21-202517-10-56_1.MP4", title: "User Experience", platform: "TikTok", views: "Feature Demo" },
+  
+  // High Impact Images
+  { type: "image", src: "/images/social/gridesprinter.jpg", title: "VIP Experience", platform: "Instagram Post", views: "Campaign Launch" },
+  { type: "image", src: "/images/social/IMG_6994.jpg", title: "Lifestyle Content", platform: "Instagram Feed", views: "Brand Aesthetic" },
+  { type: "image", src: "/images/social/IMG_6995.jpg", title: "Community Event", platform: "Facebook", views: "Event Coverage" },
+  { type: "image", src: "/images/social/IMG_6998.jpg", title: "Visual Grid Strategy", platform: "Content Planning", views: "Grid Layout" },
+  
+  // Strategy Slides (Screenshots)
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.24.54PM.png", title: "Campaign Positioning", platform: "Strategy Deck", views: "Internal Doc" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.34.54PM.png", title: "Landing Page Strategy", platform: "Web Optimization", views: "Conversion Rate" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.36.06PM.png", title: "Audience Analysis", platform: "Market Research", views: "Targeting" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.39.18PM.png", title: "Content Pillars", platform: "Social Strategy", views: "Planning" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.39.34PM.png", title: "Engagement Metrics", platform: "Analytics", views: "KPIs" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.41.29PM.png", title: "Growth Trajectory", platform: "Performance", views: "Q4 Report" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.42.33PM.png", title: "Competitor Analysis", platform: "Market Intel", views: "Benchmarking" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.43.24PM.png", title: "Brand Voice", platform: "Identity", views: "Messaging" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.44.09PM.png", title: "Visual Guidelines", platform: "Brand Book", views: "Design System" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.44.36PM.png", title: "Social Calendar", platform: "Planning", views: "Schedule" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.45.27PM.png", title: "Influencer Strategy", platform: "Partnerships", views: "Outreach" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.46.37PM.png", title: "Paid Media Plan", platform: "Ad Strategy", views: "Budgeting" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.49.21PM.png", title: "Email Marketing", platform: "Retention", views: "CRM" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.50.47PM.png", title: "Event Activation", platform: "Experiential", views: "Live Ops" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.51.11PM.png", title: "PR Roadmap", platform: "Communications", views: "Timeline" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.52.18PM.png", title: "Crisis Management", platform: "PR Protocol", views: "Risk Mitigation" },
+  { type: "image", src: "/images/social/Screenshot2025-12-20at2.52.41PM.png", title: "Stakeholder Comms", platform: "Corporate PR", views: "Internal" },
+  { type: "image", src: "/images/social/Screenshot2025-12-21at8.01.10AM.png", title: "Meta Business Suite", platform: "Tools", views: "Dashboard" },
+  
+  // Additional Assets
+  { type: "image", src: "/images/social/Image12-19-25at3_edited_edited_edited_edited_edited_edited_edited.jpg", title: "Campaign Visual", platform: "Photography", views: "Edited" },
+  { type: "image", src: "/images/social/288F0174-9585-4289-B3DC-4748B1502CE3.PNG", title: "Brand Asset", platform: "Design", views: "Mockup" },
+  { type: "image", src: "/images/social/IMG_6999.PNG", title: "Before Transformation", platform: "Case Study", views: "Archive" },
+];
+
 export default function Home() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -28,8 +68,8 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full overflow-x-hidden">
-      {/* Hero Section - Split Layout (Template 3531 Structure + 3700 Typography) */}
+    <div className="w-full overflow-x-hidden bg-[#02040a] text-white">
+      {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center pt-24 pb-12 px-4 md:px-8 relative">
         {/* Background Glow */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] -z-10" />
@@ -97,15 +137,13 @@ export default function Home() {
                   className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
                 />
               </div>
-
-
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Expertise Section - 3-Column Grid (Template 3531) with Rounded Cards (Template 3700) */}
-      <section id="expertise" className="py-24 px-4 md:px-8 bg-black/20">
+      {/* Expertise Section */}
+      <section id="expertise" className="py-24 px-4 md:px-8 bg-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-3xl md:text-5xl font-serif font-bold">Core Expertise</h2>
@@ -163,7 +201,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brand Transformation - Before/After */}
+      {/* Brand Transformation */}
       <section id="transformation" className="py-24 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -189,7 +227,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <Button variant="outline" className="rounded-full border-white/10 hover:bg-white/5 mt-8" onClick={() => window.open("/marketing-plan.pdf", "_blank")}>
+              <Button variant="outline" className="rounded-full border-white/10 hover:bg-white/5 mt-8" onClick={() => window.open("/marketing-recap-2025.pdf", "_blank")}>
                 <Download className="mr-2 h-4 w-4" /> View Marketing Plan
               </Button>
             </div>
@@ -217,7 +255,7 @@ export default function Home() {
                     <img 
                       src="/images/portfolio/288F0174-9585-4289-B3DC-4748B1502CE3.PNG" 
                       alt="Brand After" 
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain bg-black/50 transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 </div>
@@ -227,194 +265,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Digital Brand Identity - Gallery */}
-      <section id="identity" className="py-24 px-4 md:px-8 bg-black/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-5xl font-serif font-bold">Digital Brand Identity</h2>
-              <p className="text-muted-foreground max-w-xl">
-                A collection of visual assets, 3D renderings, and UI/UX designs created to establish a distinct digital footprint.
-              </p>
-            </div>
-            <Button variant="ghost" className="text-primary hover:text-primary/80 hover:bg-transparent p-0 group">
-              View All Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { img: "/images/portfolio/ChatGPTImageNov3,2025at03_57_08PM.png", title: "3D Brand Assets", category: "Visual Design" },
-              { img: "/images/portfolio/GrideLogoandMobileAppDisplay.png", title: "App Interface", category: "UI/UX" },
-              { img: "/images/portfolio/B4EEC9F0-D2A9-4D40-AC29-15BFB73A1DC9.png", title: "Brand Pattern", category: "Identity" },
-              { img: "/images/portfolio/ChatGPTImageOct31,2025at02_24_28PM.png", title: "Iconography", category: "3D Design" }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group relative aspect-square rounded-[2rem] overflow-hidden cursor-pointer"
-              >
-                <img 
-                  src={item.img} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Media Marketing Section */}
-      <section id="social-media" className="py-24 px-4 md:px-8 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-16">
+      {/* Social Media & Content Strategy - Comprehensive Masonry Grid */}
+      <section id="social-media" className="py-24 px-4 md:px-8 relative overflow-hidden bg-white/5">
+        <div className="max-w-[1600px] mx-auto space-y-16">
           <div className="text-center space-y-4">
             <Badge variant="outline" className="rounded-full px-4 py-1 border-primary/30 text-primary tracking-widest text-xs uppercase">
-              Campaign Showcase
+              Comprehensive Portfolio
             </Badge>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold">Social Media Marketing</h2>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold">Social Media & Strategy</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Driving engagement through high-impact visuals, strategic content grids, and dynamic video storytelling.
+              A complete archive of campaign assets, strategic documentation, and high-performance content.
             </p>
           </div>
 
-          {/* Social Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Column 1: Campaign Posts */}
-            <div className="space-y-8">
-              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xs">
-                    IG
+          {/* Masonry Grid */}
+          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+            {socialAssets.map((asset, index) => (
+              <div key={index} className="break-inside-avoid">
+                <div className="bg-black/40 rounded-[2rem] border border-white/10 overflow-hidden hover:border-primary/30 transition-all duration-300 group">
+                  {/* Context Header - ALWAYS ABOVE ASSET */}
+                  <div className="p-4 border-b border-white/5 bg-white/5 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-[10px] ${
+                        asset.platform.includes("Instagram") ? "bg-gradient-to-br from-purple-500 to-orange-500" :
+                        asset.platform.includes("Facebook") ? "bg-blue-600" :
+                        asset.platform.includes("TikTok") ? "bg-black border border-white/20" :
+                        "bg-primary/20 text-primary"
+                      }`}>
+                        {asset.platform.substring(0, 2).toUpperCase()}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-xs text-white">{asset.title}</h4>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{asset.platform}</p>
+                      </div>
+                    </div>
+                    <Badge variant="secondary" className="text-[10px] h-5 px-2 bg-white/10 hover:bg-white/20 text-white/80">
+                      {asset.views}
+                    </Badge>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-sm">Campaign Highlight</h4>
-                    <p className="text-xs text-muted-foreground">Instagram Feed</p>
-                  </div>
-                </div>
-                <div className="aspect-[4/5] rounded-xl overflow-hidden bg-black/40 relative group">
-                  <img 
-                    src="/images/social-post-1.jpg" 
-                    alt="Social Media Campaign Post 1" 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="mt-4 flex justify-between text-sm text-muted-foreground">
-                  <span>High Engagement</span>
-                  <span>Brand Awareness</span>
-                </div>
-              </div>
 
-              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs">
-                    FB
+                  {/* Asset Content */}
+                  <div className="relative">
+                    {asset.type === "video" ? (
+                      <div className="aspect-[9/16] bg-black relative group-hover:shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                        <video 
+                          src={asset.src} 
+                          className="w-full h-full object-cover"
+                          controls
+                          playsInline
+                          preload="metadata"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity">
+                          <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                            <Play className="w-5 h-5 text-white fill-white" />
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="relative group-hover:opacity-90 transition-opacity">
+                        <img 
+                          src={asset.src} 
+                          alt={asset.title} 
+                          className="w-full h-auto object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
                   </div>
-                  <div>
-                    <h4 className="font-bold text-sm">Community Post</h4>
-                    <p className="text-xs text-muted-foreground">Facebook Page</p>
-                  </div>
-                </div>
-                <div className="aspect-[4/5] rounded-xl overflow-hidden bg-black/40 relative group">
-                  <img 
-                    src="/images/social-post-2.jpg" 
-                    alt="Social Media Campaign Post 2" 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
                 </div>
               </div>
-            </div>
-
-            {/* Column 2: Content Strategy (Grid & Management) */}
-            <div className="space-y-8 md:pt-12">
-              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10" />
-                <img 
-                  src="/images/social-grid.jpg" 
-                  alt="Content Strategy Grid" 
-                  className="w-full h-auto object-cover rounded-xl opacity-80 group-hover:opacity-100 transition-opacity"
-                />
-                <div className="absolute bottom-6 left-6 right-6 z-20">
-                  <h3 className="text-xl font-bold mb-2">Curated Content Grid</h3>
-                  <p className="text-sm text-white/80">
-                    A cohesive visual strategy designed to maintain brand consistency across TikTok and Reels.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors">
-                <h4 className="font-bold text-sm mb-4 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-green-500" />
-                  Campaign Management
-                </h4>
-                <div className="rounded-xl overflow-hidden border border-white/5">
-                  <img 
-                    src="/images/social-meta-suite.png" 
-                    alt="Meta Business Suite Management" 
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-                <p className="text-xs text-muted-foreground mt-4">
-                  Behind the scenes: Scheduling, analytics, and community management via Meta Business Suite.
-                </p>
-              </div>
-            </div>
-
-            {/* Column 3: Video Content (Reels/TikToks) */}
-            <div className="space-y-12">
-              {/* Video 1 */}
-              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-orange-500 flex items-center justify-center text-white font-bold text-xs">
-                    IG
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sm">Event Highlight Reel</h4>
-                    <p className="text-xs text-muted-foreground">Instagram Reels • 12.2K Views</p>
-                  </div>
-                </div>
-                <div className="aspect-[9/16] rounded-[1.5rem] overflow-hidden bg-black relative group shadow-lg">
-                  <video 
-                    src="/images/social-video-1.mp4" 
-                    className="w-full h-full object-cover"
-                    controls
-                    playsInline
-                    poster="/images/social-sprinter.jpg"
-                  />
-                </div>
-                <p className="text-sm text-muted-foreground mt-4">
-                  Capturing the energy of live events to drive bookings and brand excitement.
-                </p>
-              </div>
-
-              {/* Video 2 */}
-              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-bold text-xs border border-white/20">
-                    TK
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sm">Service Walkthrough</h4>
-                    <p className="text-xs text-muted-foreground">TikTok • Viral Content</p>
-                  </div>
-                </div>
-                <div className="aspect-[9/16] rounded-[1.5rem] overflow-hidden bg-black relative group shadow-lg">
-                  <video 
-                    src="/images/social-video-2.mp4" 
-                    className="w-full h-full object-cover"
-                    controls
-                    playsInline
-                  />
-                </div>
-                <p className="text-sm text-muted-foreground mt-4">
-                  Educational content demonstrating app features and user benefits.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -470,7 +390,7 @@ export default function Home() {
               <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm">
                 {/* PDF Cover Preview */}
                 <img 
-                  src="/images/report/page_1.jpg" 
+                  src="/images/social/Screenshot2025-12-20at2.24.54PM.png" 
                   alt="2025 Marketing Recap Report Cover" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
