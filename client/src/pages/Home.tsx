@@ -5,6 +5,39 @@ import { Mail, ArrowUpRight, Linkedin, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Home() {
+  // All uploaded images for the comprehensive gallery
+  const allWorkImages = [
+    "288F0174-9585-4289-B3DC-4748B1502CE3.PNG",
+    "B4EEC9F0-D2A9-4D40-AC29-15BFB73A1DC9.png",
+    "ChatGPTImageNov3,2025at03_57_08PM.png",
+    "ChatGPTImageOct31,2025at02_24_28PM.png",
+    "GrideLogoandMobileAppDisplay.png",
+    "IMG_6994.jpg",
+    "IMG_6995.jpg",
+    "IMG_6998.jpg",
+    "IMG_6999.PNG",
+    "Image12-19-25at3_edited_edited_edited_edited_edited_edited_edited.jpg",
+    "Screenshot2025-12-20at2.24.54PM.png",
+    "Screenshot2025-12-20at2.34.54PM.png",
+    "Screenshot2025-12-20at2.36.06PM.png",
+    "Screenshot2025-12-20at2.39.18PM.png",
+    "Screenshot2025-12-20at2.39.34PM.png",
+    "Screenshot2025-12-20at2.41.29PM.png",
+    "Screenshot2025-12-20at2.42.33PM.png",
+    "Screenshot2025-12-20at2.43.24PM.png",
+    "Screenshot2025-12-20at2.44.09PM.png",
+    "Screenshot2025-12-20at2.44.36PM.png",
+    "Screenshot2025-12-20at2.45.27PM.png",
+    "Screenshot2025-12-20at2.46.37PM.png",
+    "Screenshot2025-12-20at2.49.21PM.png",
+    "Screenshot2025-12-20at2.50.47PM.png",
+    "Screenshot2025-12-20at2.51.11PM.png",
+    "Screenshot2025-12-20at2.52.18PM.png",
+    "Screenshot2025-12-20at2.52.41PM.png",
+    "gridescreenshot.png",
+    "gridesprinter.jpg"
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-white/20 font-sans">
       {/* Navigation */}
@@ -19,7 +52,7 @@ export default function Home() {
             ANGELO PARKER
           </motion.a>
           <div className="hidden md:flex gap-10 items-center">
-            {['Expertise', 'Work', 'About', 'Contact'].map((item) => (
+            {['Expertise', 'Portfolio', 'About', 'Contact'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`} 
@@ -45,19 +78,19 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-medium tracking-tight mb-8 leading-[1.1]">
-                Crafting Stories<br/>
-                <span className="text-foreground/40 italic">That Drive Growth.</span>
+                Strategic<br/>
+                <span className="text-foreground/40 italic">Impact.</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/60 mb-10 max-w-xl leading-relaxed font-light">
-                Strategic Communications Expert transforming brands through authentic engagement, PR, and data-driven marketing analytics.
+                Communications Expert delivering comprehensive brand growth, reputation management, and high-level strategic execution for forward-thinking organizations.
               </p>
               <div className="flex gap-6">
                 <Button 
                   size="lg" 
                   className="bg-white text-black hover:bg-white/90 rounded-full px-8 text-sm font-medium transition-all hover:scale-105"
-                  onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  View Selected Work
+                  View Portfolio
                 </Button>
                 <Button 
                   size="lg" 
@@ -65,7 +98,7 @@ export default function Home() {
                   className="text-foreground hover:bg-white/5 rounded-full px-8 text-sm font-medium"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Let's Talk <ArrowUpRight className="ml-2 w-4 h-4" />
+                  Connect <ArrowUpRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
             </motion.div>
@@ -97,144 +130,54 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-3 gap-12">
             <div className="space-y-6">
-              <h3 className="text-2xl font-display font-medium">PR & Communications</h3>
+              <h3 className="text-2xl font-display font-medium">Strategic Communications</h3>
               <p className="text-foreground/50 leading-relaxed">
-                Architecting high-value brand narratives and managing strategic partnerships. Building sustainable reputation engines that stand the test of time.
+                Developing and executing comprehensive communication strategies that align with organizational goals and drive significant brand awareness.
               </p>
             </div>
             <div className="space-y-6">
-              <h3 className="text-2xl font-display font-medium">Social Media Strategy</h3>
+              <h3 className="text-2xl font-display font-medium">Brand Management</h3>
               <p className="text-foreground/50 leading-relaxed">
-                Building authentic communities and creating viral-worthy content. Driving meaningful engagement across platforms with over 200K+ impressions.
+                Overseeing brand identity and narrative across multiple channels to ensure consistency, resonance, and sustained market relevance.
               </p>
             </div>
             <div className="space-y-6">
-              <h3 className="text-2xl font-display font-medium">Marketing Analytics</h3>
+              <h3 className="text-2xl font-display font-medium">Digital Growth</h3>
               <p className="text-foreground/50 leading-relaxed">
-                Data-driven decision making and conversion optimization. Turning complex metrics into actionable insights for sustainable business growth.
+                Leveraging digital platforms and data insights to expand audience reach, enhance engagement, and achieve measurable business outcomes.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Work */}
-      <section id="work" className="py-32 bg-white/[0.02]">
+      {/* Comprehensive Portfolio Section */}
+      <section id="portfolio" className="py-32 bg-white/[0.02]">
         <div className="container">
-          <div className="flex justify-between items-end mb-20">
-            <h2 className="text-4xl md:text-5xl font-display font-medium">Featured Projects</h2>
-            <span className="hidden md:block text-sm text-foreground/40">2023 — 2025</span>
-          </div>
-
-          <div className="space-y-32">
-            {/* Project 1 */}
-            <div className="group grid md:grid-cols-2 gap-16 items-center">
-              <div className="order-2 md:order-1">
-                <span className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-4 block">Growth Strategy</span>
-                <h3 className="text-3xl font-display font-medium mb-6">Gride Technology</h3>
-                <p className="text-foreground/60 mb-8 leading-relaxed">
-                  Comprehensive brand launch and growth strategy resulting in 200K+ TikTok impressions and 18.7K profile visits. Spearheaded "Project 2026" focusing on cost-effective acquisition and operational excellence.
-                </p>
-                <ul className="space-y-4 mb-8 border-l border-white/10 pl-6">
-                  <li className="text-sm text-foreground/70">
-                    <span className="block text-xs text-foreground/30 uppercase tracking-wide mb-1">Impact</span>
-                    +15% Conversion Rates
-                  </li>
-                  <li className="text-sm text-foreground/70">
-                    <span className="block text-xs text-foreground/30 uppercase tracking-wide mb-1">Reach</span>
-                    22K+ Social Media Growth
-                  </li>
-                </ul>
-              </div>
-              <div className="order-1 md:order-2 relative aspect-[4/3] overflow-hidden rounded-lg bg-white/5">
-                <img 
-                  src="/images/portfolio/gridescreenshot.png" 
-                  alt="Gride Technology" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="group grid md:grid-cols-2 gap-16 items-center">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white/5">
-                <img 
-                  src="/images/portfolio/Screenshot2025-12-20at2.39.18PM.png" 
-                  alt="Social Analytics" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-4 block">Analytics & Insights</span>
-                <h3 className="text-3xl font-display font-medium mb-6">Data-Driven Campaigns</h3>
-                <p className="text-foreground/60 mb-8 leading-relaxed">
-                  Executed 18 strategic campaigns showcasing growth metrics, engagement strategies, and conversion optimization. Leveraged GA4 and HubSpot to build automated lead journeys.
-                </p>
-                <ul className="space-y-4 mb-8 border-l border-white/10 pl-6">
-                  <li className="text-sm text-foreground/70">
-                    <span className="block text-xs text-foreground/30 uppercase tracking-wide mb-1">Engagement</span>
-                    8.5% Average Engagement Rate
-                  </li>
-                  <li className="text-sm text-foreground/70">
-                    <span className="block text-xs text-foreground/30 uppercase tracking-wide mb-1">Growth</span>
-                    Consistent Month-over-Month User Acquisition
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Visual Campaigns Section */}
-      <section id="visuals" className="py-32 border-t border-white/5">
-        <div className="container">
-          <div className="mb-20 max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-display font-medium mb-6">Visual Campaigns</h2>
+          <div className="mb-20 max-w-3xl">
+            <h2 className="text-4xl md:text-5xl font-display font-medium mb-6">Selected Work</h2>
             <p className="text-foreground/50 leading-relaxed">
-              A curated gallery of creative direction, brand identity, and social media assets designed to drive engagement and build community.
+              A visual archive of strategic campaigns, digital assets, and brand initiatives executed across various industries.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Item 1: Gridesgiving */}
-            <div className="group relative aspect-[4/5] overflow-hidden rounded-lg bg-white/5">
-              <img 
-                src="/images/portfolio/IMG_6995.jpg" 
-                alt="Gridesgiving Campaign" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <span className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Campaign</span>
-                <h4 className="text-xl font-display font-medium text-white">Gridesgiving Special</h4>
+          {/* Masonry-style Grid */}
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+            {allWorkImages.map((img, index) => (
+              <div key={index} className="break-inside-avoid group relative rounded-lg overflow-hidden bg-white/5 hover:shadow-2xl transition-all duration-500">
+                <img 
+                  src={`/images/portfolio/${img}`} 
+                  alt={`Portfolio Item ${index + 1}`} 
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="text-white text-sm font-medium tracking-widest uppercase border border-white/30 px-4 py-2 rounded-full backdrop-blur-sm">
+                    View Project
+                  </span>
+                </div>
               </div>
-            </div>
-
-            {/* Item 2: App Interface */}
-            <div className="group relative aspect-[4/5] overflow-hidden rounded-lg bg-white/5">
-              <img 
-                src="/images/portfolio/GrideLogoandMobileAppDisplay.png" 
-                alt="App Interface Design" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <span className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Product Design</span>
-                <h4 className="text-xl font-display font-medium text-white">Mobile Experience</h4>
-              </div>
-            </div>
-
-            {/* Item 3: Social Content */}
-            <div className="group relative aspect-[4/5] overflow-hidden rounded-lg bg-white/5">
-              <img 
-                src="/images/portfolio/IMG_6998.jpg" 
-                alt="Social Media Content" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <span className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Social Media</span>
-                <h4 className="text-xl font-display font-medium text-white">Viral Content Strategy</h4>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
