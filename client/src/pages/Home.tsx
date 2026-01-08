@@ -123,9 +123,40 @@ export default function Home() {
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                 </div>
                 <h3 className="text-xl font-bold text-[#2A2520] mb-3">Marketing Analytics</h3>
-                <p className="text-[#6A6055] leading-relaxed">
+                <p className="text-[#6A6055] leading-relaxed mb-6">
                   Data-driven decision making, conversion optimization, and ROI maximization. Turning metrics into actionable insights for sustainable growth.
                 </p>
+                <a href="/marketing-plan.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#D48C44] font-medium hover:underline text-sm">
+                  View 2026 Marketing Plan <ArrowUpRight className="ml-1 w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Brand Transformation Section */}
+          <div className="mb-20">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-display font-bold text-[#2A2520] mb-4">Brand Transformation</h2>
+              <div className="w-16 h-1 bg-[#D48C44] mx-auto rounded-full mb-6"></div>
+              <p className="text-[#6A6055]">
+                From concept to market leader: Visualizing the impact of strategic branding.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                  <img src="/images/portfolio/IMG_6999.PNG" alt="Before Transformation" className="w-full h-full object-cover" />
+                  <div className="absolute top-4 left-4 bg-black/70 text-white px-4 py-1 rounded-full text-sm font-medium backdrop-blur-sm">Before</div>
+                </div>
+                <p className="text-center text-[#6A6055] text-sm font-medium">Initial Launch Phase</p>
+              </div>
+              <div className="space-y-4">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5] border-2 border-[#D48C44]">
+                  <img src="/images/portfolio/IMG_6995.jpg" alt="After Transformation" className="w-full h-full object-cover" />
+                  <div className="absolute top-4 left-4 bg-[#D48C44] text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">After</div>
+                </div>
+                <p className="text-center text-[#D48C44] text-sm font-bold">Metro Atlanta's #1 Brand</p>
               </div>
             </div>
           </div>
