@@ -153,7 +153,7 @@
     @apply bg-background text-foreground font-sans antialiased;
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.75) 50%, rgba(15, 23, 42, 0.75) 100%), url('/images/desert-sahara-night.jpg') center/cover fixed;
     background-attachment: fixed;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M8 4c0-2 2-4 4-4s4 2 4 4c0 4-4 8-8 12 0-4 4-8 8-12 0 2-2 4-4 4s-4-2-4-4z" fill="%2300d4ff" opacity="0.8"/></svg>') 8 2, auto;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g fill="%23d4af37" opacity="0.9"><path d="M16 2 L20 8 L16 14 L12 8 Z" stroke="%23b8860b" stroke-width="0.5"/><rect x="14" y="16" width="4" height="8" fill="%23d4af37" stroke="%23b8860b" stroke-width="0.5"/><ellipse cx="16" cy="26" rx="3" ry="2" fill="%23b8860b" opacity="0.6"/></g></svg>') 8 2, auto;
     animation: subtle-sand-shift 30s ease-in-out infinite;
   }
   
@@ -213,7 +213,7 @@
   select:not(:disabled),
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="12" cy="12" r="6" fill="%2300d4ff" opacity="0.9"/></svg>') 12 12, pointer;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g fill="%23d4af37" opacity="0.95"><path d="M16 2 L20 8 L16 14 L12 8 Z" stroke="%23b8860b" stroke-width="0.5"/><rect x="14" y="16" width="4" height="8" fill="%23d4af37" stroke="%23b8860b" stroke-width="0.5"/><ellipse cx="16" cy="26" rx="3" ry="2" fill="%23b8860b" opacity="0.6"/></g></svg>') 8 2, pointer;
   }
 }
 
