@@ -269,6 +269,133 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Social Media Marketing Section */}
+      <section id="social-media" className="py-24 px-4 md:px-8 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="text-center space-y-4">
+            <Badge variant="outline" className="rounded-full px-4 py-1 border-primary/30 text-primary tracking-widest text-xs uppercase">
+              Campaign Showcase
+            </Badge>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold">Social Media Marketing</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Driving engagement through high-impact visuals, strategic content grids, and dynamic video storytelling.
+            </p>
+          </div>
+
+          {/* Social Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Column 1: Campaign Posts */}
+            <div className="space-y-8">
+              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xs">
+                    IG
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm">Campaign Highlight</h4>
+                    <p className="text-xs text-muted-foreground">Instagram Feed</p>
+                  </div>
+                </div>
+                <div className="aspect-[4/5] rounded-xl overflow-hidden bg-black/40 relative group">
+                  <img 
+                    src="/images/social-post-1.jpg" 
+                    alt="Social Media Campaign Post 1" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="mt-4 flex justify-between text-sm text-muted-foreground">
+                  <span>High Engagement</span>
+                  <span>Brand Awareness</span>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs">
+                    FB
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm">Community Post</h4>
+                    <p className="text-xs text-muted-foreground">Facebook Page</p>
+                  </div>
+                </div>
+                <div className="aspect-[4/5] rounded-xl overflow-hidden bg-black/40 relative group">
+                  <img 
+                    src="/images/social-post-2.jpg" 
+                    alt="Social Media Campaign Post 2" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Column 2: Content Strategy (Grid & Management) */}
+            <div className="space-y-8 md:pt-12">
+              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 z-10" />
+                <img 
+                  src="/images/social-grid.jpg" 
+                  alt="Content Strategy Grid" 
+                  className="w-full h-auto object-cover rounded-xl opacity-80 group-hover:opacity-100 transition-opacity"
+                />
+                <div className="absolute bottom-6 left-6 right-6 z-20">
+                  <h3 className="text-xl font-bold mb-2">Curated Content Grid</h3>
+                  <p className="text-sm text-white/80">
+                    A cohesive visual strategy designed to maintain brand consistency across TikTok and Reels.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-[2rem] p-6 border border-white/10 hover:border-primary/30 transition-colors">
+                <h4 className="font-bold text-sm mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-500" />
+                  Campaign Management
+                </h4>
+                <div className="rounded-xl overflow-hidden border border-white/5">
+                  <img 
+                    src="/images/social-meta-suite.png" 
+                    alt="Meta Business Suite Management" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                <p className="text-xs text-muted-foreground mt-4">
+                  Behind the scenes: Scheduling, analytics, and community management via Meta Business Suite.
+                </p>
+              </div>
+            </div>
+
+            {/* Column 3: Video Content (Reels/TikToks) */}
+            <div className="space-y-8">
+              <div className="bg-white/5 rounded-[2rem] p-2 border border-white/10 hover:border-primary/30 transition-colors">
+                <div className="aspect-[9/16] rounded-[1.5rem] overflow-hidden bg-black relative group">
+                  <video 
+                    src="/images/social-video-1.mp4" 
+                    className="w-full h-full object-cover"
+                    controls
+                    playsInline
+                    poster="/images/social-sprinter.jpg"
+                  />
+                  <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white pointer-events-none">
+                    Reels
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-[2rem] p-2 border border-white/10 hover:border-primary/30 transition-colors">
+                <div className="aspect-[9/16] rounded-[1.5rem] overflow-hidden bg-black relative group">
+                  <video 
+                    src="/images/social-video-2.mp4" 
+                    className="w-full h-full object-cover"
+                    controls
+                    playsInline
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-24 px-4 md:px-8 bg-black/20">
         <div className="max-w-3xl mx-auto text-center space-y-8">
