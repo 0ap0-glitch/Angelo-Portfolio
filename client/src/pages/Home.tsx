@@ -53,7 +53,6 @@ const socialAssets = [
   { type: "image", src: "/images/social/Screenshot2025-12-20at2.52.18PM.png", title: "Crisis Management", platform: "PR Protocol", views: "Risk Mitigation" },
   { type: "image", src: "/images/social/Screenshot2025-12-20at2.52.41PM.png", title: "Stakeholder Comms", platform: "Corporate PR", views: "Internal" },
   { type: "image", src: "/images/social/Screenshot2025-12-21at8.01.10AM.png", title: "Meta Business Suite", platform: "Tools", views: "Dashboard" },
-  { type: "image", src: "/images/social/marketing-tactics-barcode.png", title: "Marketing Tactics", platform: "Campaign Ideas", views: "Tactics" },
   { type: "image", src: "/images/social/google-survey-form.png", title: "Feedback Form", platform: "Survey", views: "Feedback" },
   
 
@@ -545,8 +544,8 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground">Profile Visits</p>
                 </div>
                 <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                  <h4 className="text-4xl font-bold text-white mb-2">Top 1%</h4>
-                  <p className="text-sm text-muted-foreground">Industry Standard</p>
+                  <h4 className="text-4xl font-bold text-white mb-2">40%</h4>
+                  <p className="text-sm text-muted-foreground">Engagement Growth</p>
                 </div>
               </div>
             </div>
