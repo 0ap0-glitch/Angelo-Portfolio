@@ -288,6 +288,95 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Landing Page Strategy Section */}
+      <section id="landing-pages" className="py-24 px-4 md:px-8 bg-black/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Video */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <div className="rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+                <video
+                  controls
+                  className="w-full h-auto"
+                  poster="/images/portfolio/landing-page-thumb.jpg"
+                >
+                  <source src="/videos/landing-page-demo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </motion.div>
+
+            {/* Right: Description */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div className="space-y-4">
+                <Badge variant="outline" className="rounded-full px-4 py-1 border-primary/30 text-primary tracking-widest text-xs uppercase">
+                  Landing Page Strategy
+                </Badge>
+                <h2 className="text-3xl md:text-5xl font-serif font-bold">
+                  Conversion-Driven <span className="text-gradient-gold">Landing Pages</span>
+                </h2>
+              </div>
+
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  Landing pages are the cornerstone of modern marketing lifecycle strategy. I design and deploy conversion-optimized landing pages using industry-leading platforms like HubSpot that seamlessly integrate with your broader marketing ecosystem.
+                </p>
+                
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-white">The Methodology:</h3>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex gap-3">
+                      <span className="text-primary font-bold">→</span>
+                      <span><strong>Lifecycle Integration:</strong> Landing pages are strategically positioned within your marketing funnel to capture high-intent prospects and move them through defined lifecycle stages.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-primary font-bold">→</span>
+                      <span><strong>KPI-Driven Design:</strong> Every element—from copy to CTA—is optimized for measurable outcomes: click-through rates, form submissions, and social engagement.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-primary font-bold">→</span>
+                      <span><strong>Social Amplification:</strong> Landing pages drive traffic to your social channels, creating a viral loop where engaged users become brand advocates, sharing content with their networks.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-primary font-bold">→</span>
+                      <span><strong>Database Building:</strong> Captured leads are automatically added to your CRM database, creating a qualified audience pool for ongoing nurture campaigns.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-primary font-bold">→</span>
+                      <span><strong>Community Engagement:</strong> Through email sequences and targeted outreach, I help you build a loyal community that feels invested in your brand story.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <p className="pt-4 border-t border-white/10">
+                  The result is a self-sustaining growth engine: landing pages generate analytics, analytics inform strategy, and strategy drives continuous improvement in conversion rates and audience loyalty.
+                </p>
+              </div>
+
+              <Button 
+                size="lg" 
+                className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base"
+                onClick={() => scrollToSection("contact")}
+              >
+                Discuss Your Landing Page Strategy <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Brand Transformation */}
       <section id="transformation" className="py-24 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-16">
