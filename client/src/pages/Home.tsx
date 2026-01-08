@@ -206,26 +206,26 @@ export default function Home() {
               {/* Before/After Visuals */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative group max-w-xs mx-auto">
+                  <div className="h-96 rounded-[2rem] overflow-hidden relative group max-w-xs mx-auto bg-white/5 border border-white/10">
                     <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white z-10">
                       BEFORE
                     </div>
                     <img 
                       src="/images/portfolio/IMG_6999.PNG" 
                       alt="Brand Before" 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 </div>
-                <div className="space-y-4 mt-12">
-                  <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative group border-2 border-accent/20 shadow-[0_0_30px_rgba(0,255,255,0.1)] max-w-xs mx-auto">
+                <div className="space-y-4">
+                  <div className="h-96 rounded-[2rem] overflow-hidden relative group border-2 border-accent/20 shadow-[0_0_30px_rgba(0,255,255,0.1)] max-w-xs mx-auto bg-white/5">
                     <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold z-10">
                       AFTER
                     </div>
                     <img 
                       src="/images/portfolio/288F0174-9585-4289-B3DC-4748B1502CE3.PNG" 
                       alt="Brand After" 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 </div>
