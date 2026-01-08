@@ -82,7 +82,7 @@ export default function Home() {
                 <span className="text-foreground/40 italic">Impact.</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/60 mb-10 max-w-xl leading-relaxed font-light">
-                Communications Expert delivering comprehensive brand growth, reputation management, and high-level strategic execution for forward-thinking organizations.
+                Communications Expert delivering comprehensive brand growth. Proven track record including <strong>200K+ organic impressions</strong> and <strong>18.7K+ profile visits</strong> for key technology partners.
               </p>
               <div className="flex gap-6">
                 <Button 
@@ -157,7 +157,7 @@ export default function Home() {
           <div className="mb-20 max-w-3xl">
             <h2 className="text-4xl md:text-5xl font-display font-medium mb-6">Selected Work</h2>
             <p className="text-foreground/50 leading-relaxed">
-              A visual archive of strategic campaigns, digital assets, and brand initiatives executed across various industries.
+              A visual archive of strategic campaigns, digital assets, and brand initiatives. Featuring high-impact work for <strong>Gride Technology</strong> (200K+ impressions, 18.7K profile visits) and other confidential partners.
             </p>
           </div>
 
