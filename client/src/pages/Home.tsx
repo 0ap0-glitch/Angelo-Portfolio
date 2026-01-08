@@ -275,9 +275,41 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Masonry Grid */}
+          {/* Featured Video - Event Highlight Reel */}
+          <div className="w-full max-w-4xl mx-auto mb-16">
+            <div className="bg-black/40 rounded-[2rem] border border-white/10 overflow-hidden hover:border-primary/30 transition-all duration-300 group">
+              {/* Context Header */}
+              <div className="p-6 border-b border-white/5 bg-white/5 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-orange-500 flex items-center justify-center text-white font-bold text-xs">
+                    IG
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-white">Event Highlight Reel</h4>
+                    <p className="text-sm text-muted-foreground uppercase tracking-wider">Instagram Reels</p>
+                  </div>
+                </div>
+                <Badge variant="secondary" className="text-xs h-6 px-3 bg-white/10 hover:bg-white/20 text-white/80">
+                  12.2K Views
+                </Badge>
+              </div>
+
+              {/* Video Player - Full Visibility, No Cropping */}
+              <div className="relative bg-black w-full flex justify-center">
+                <video 
+                  src="/images/social/Untitledvideo-2.mp4" 
+                  className="w-full max-h-[80vh] object-contain"
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Masonry Grid for Remaining Assets */}
           <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
-            {socialAssets.map((asset, index) => (
+            {socialAssets.filter(asset => asset.title !== "Event Highlight Reel").map((asset, index) => (
               <div key={index} className="break-inside-avoid">
                 <div className="bg-black/40 rounded-[2rem] border border-white/10 overflow-hidden hover:border-primary/30 transition-all duration-300 group">
                   {/* Context Header - ALWAYS ABOVE ASSET */}
