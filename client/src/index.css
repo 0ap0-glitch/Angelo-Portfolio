@@ -151,10 +151,9 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('/images/background-premium.jpg');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(135deg, oklch(0.12 0.01 260) 0%, oklch(0.15 0.08 200) 50%, oklch(0.18 0.06 180) 100%);
     background-attachment: fixed;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M8 4c0-2 2-4 4-4s4 2 4 4c0 4-4 8-8 12 0-4 4-8 8-12 0 2-2 4-4 4s-4-2-4-4z" fill="%2300d4ff" opacity="0.8"/></svg>') 8 2, auto;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
@@ -168,7 +167,7 @@
   select:not(:disabled),
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="12" cy="12" r="6" fill="%2300d4ff" opacity="0.9"/></svg>') 12 12, pointer;
   }
 }
 

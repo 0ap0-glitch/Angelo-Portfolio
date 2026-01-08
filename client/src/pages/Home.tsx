@@ -302,10 +302,12 @@ export default function Home() {
             >
               <div className="rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
                 <video
-                  controls
                   className="w-full h-auto"
                   poster="/images/portfolio/landing-page-thumb.jpg"
                   preload="metadata"
+                  muted
+                  controls
+                  controlsList="nodownload"
                 >
                   <source src="/videos/landing-demo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
