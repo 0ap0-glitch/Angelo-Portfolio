@@ -305,8 +305,9 @@ export default function Home() {
                   controls
                   className="w-full h-auto"
                   poster="/images/portfolio/landing-page-thumb.jpg"
+                  preload="metadata"
                 >
-                  <source src="/videos/landing-page-demo.mp4" type="video/mp4" />
+                  <source src="/videos/landing-demo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
