@@ -84,7 +84,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="relative flex justify-center lg:justify-end"
           >
-            <div className="relative w-80 h-80 md:w-[500px] md:h-[500px]">
+            <div className="relative w-64 h-64 md:w-[400px] md:h-[400px]">
               {/* Circle Frame */}
               <div className="absolute inset-0 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm" />
               <div className="absolute inset-4 rounded-full border border-white/5 bg-white/5" />
@@ -206,7 +206,7 @@ export default function Home() {
               {/* Before/After Visuals */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative group">
+                  <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative group max-w-xs mx-auto">
                     <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white z-10">
                       BEFORE
                     </div>
@@ -218,7 +218,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="space-y-4 mt-12">
-                  <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative group border-2 border-accent/20 shadow-[0_0_30px_rgba(0,255,255,0.1)]">
+                  <div className="aspect-[3/4] rounded-[2rem] overflow-hidden relative group border-2 border-accent/20 shadow-[0_0_30px_rgba(0,255,255,0.1)] max-w-xs mx-auto">
                     <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold z-10">
                       AFTER
                     </div>
@@ -280,56 +280,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Career Timeline */}
-      <section id="career" className="py-24 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-center mb-16">Professional Journey</h2>
-          
-          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
-            {[
-              {
-                role: "Marketing Director",
-                company: "Gride Technology",
-                period: "2024 - Present",
-                desc: "Leading comprehensive marketing strategies, overseeing brand transformation, and driving user acquisition through data-backed campaigns."
-              },
-              {
-                role: "Communications Specialist",
-                company: "Freelance Consultant",
-                period: "2022 - 2024",
-                desc: "Provided strategic PR and crisis communication services to emerging tech startups and lifestyle brands."
-              },
-              {
-                role: "Content Strategist",
-                company: "Digital Agency",
-                period: "2020 - 2022",
-                desc: "Developed high-engagement content calendars and managed social media communities for diverse client portfolio."
-              }
-            ].map((job, i) => (
-              <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-background shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                  <div className="w-3 h-3 bg-primary rounded-full" />
-                </div>
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl border-white/5 hover:border-primary/30 transition-colors">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                    <h3 className="font-bold text-lg text-white">{job.role}</h3>
-                    <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full w-fit mt-2 sm:mt-0">{job.period}</span>
-                  </div>
-                  <p className="text-sm font-medium text-muted-foreground mb-3">{job.company}</p>
-                  <p className="text-sm text-white/70 leading-relaxed">{job.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-24 px-4 md:px-8 bg-black/20">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-5xl font-serif font-bold">Ready to Elevate Your Brand?</h2>
           <p className="text-lg text-muted-foreground">
-            I'm currently available for full-time opportunities and select consulting projects.
+            I'm currently available for opportunities and select consulting projects.
           </p>
           
           <div className="glass-panel p-8 rounded-[2.5rem] max-w-xl mx-auto mt-12">
