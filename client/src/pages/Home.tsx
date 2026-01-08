@@ -98,15 +98,7 @@ export default function Home() {
                 />
               </div>
 
-              {/* Floating Badge */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-6 -left-6 glass-panel rounded-2xl p-4 max-w-[200px]"
-              >
-                <p className="text-sm font-medium text-primary">200K+ Impressions</p>
-                <p className="text-xs text-muted-foreground">Generated for Gride Tech</p>
-              </motion.div>
+
             </div>
           </motion.div>
         </div>
