@@ -1,7 +1,7 @@
 /* Design Philosophy: Futuristic Elegance (Digital Archive) - High-end futuristic aesthetic with glassmorphism - Deep charcoal and midnight blue palette - Sophisticated typography and subtle glow effects - Focus on PR, Communications, and Growth Strategy */ 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, MapPin, Shield } from "lucide-react";
+import { Mail, MapPin, Shield, BarChart3, Globe, Zap, ExternalLink, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -18,10 +18,10 @@ export default function Home() {
             ANGELO PARKER
           </motion.h1>
           <div className="hidden md:flex gap-8 items-center">
-            {['Strategy', 'Experience', 'Archive', 'Connect'].map((item) => (
+            {['Strategy', 'Experience', 'Case Studies', 'Connect'].map((item) => (
               <a 
                 key={item} 
-                href={`#${item.toLowerCase()}`} 
+                href={`#${item.toLowerCase().replace(' ', '-')}`} 
                 className="text-xs font-medium uppercase tracking-widest text-foreground/50 hover:text-primary transition-colors"
               >
                 {item}
@@ -57,19 +57,21 @@ export default function Home() {
                 <span className="text-foreground/40">& Marketing.</span>
               </h1>
               <p className="text-lg md:text-xl text-foreground/60 mb-12 max-w-2xl leading-relaxed font-light">
-                A portfolio showcasing strategic communications, public relations, and marketing work centered on brand, reputation, and digital impact. Engineering growth through innovative storytelling and data-driven strategy.
+                Engineering growth through innovative storytelling and data-driven strategy. A portfolio showcasing strategic communications, reputation management, and digital impact for forward-thinking brands.
               </p>
               <div className="flex gap-6 flex-wrap">
                 <Button 
                   size="lg" 
                   className="bg-primary text-midnight hover:bg-primary/90 rounded-none px-10 font-bold tracking-widest uppercase text-xs transition-all hover:scale-105"
+                  onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Explore Archive
+                  Explore Work
                 </Button>
                 <Button 
                   size="lg" 
                   variant="outline" 
                   className="border-white/10 bg-white/5 hover:bg-white/10 rounded-none px-10 font-bold tracking-widest uppercase text-xs backdrop-blur-sm transition-all"
+                  onClick={() => document.getElementById('connect')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Get in Touch
                 </Button>
@@ -111,7 +113,7 @@ export default function Home() {
             <div>
               <h2 className="text-4xl md:text-5xl font-display font-bold mb-10 tracking-tight">
                 Strategic<br/>
-                <span className="text-foreground/40">Communications.</span>
+                <span className="text-foreground/40">Vision.</span>
               </h2>
               
               <div className="space-y-8">
@@ -135,6 +137,18 @@ export default function Home() {
                     <h3 className="text-xl font-bold mb-2">Global Positioning</h3>
                     <p className="text-foreground/40 leading-relaxed">
                       Aligning brand messaging with international market trends to maximize reach and resonance across borders.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-6">
+                  <div className="w-12 h-12 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-center shrink-0">
+                    <BarChart3 className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Data-Driven Growth</h3>
+                    <p className="text-foreground/40 leading-relaxed">
+                      Leveraging analytics to optimize acquisition funnels and demonstrate measurable ROI for marketing initiatives.
                     </p>
                   </div>
                 </div>
@@ -163,22 +177,22 @@ export default function Home() {
           <div className="grid gap-px bg-white/5 border border-white/5">
             {[
               {
+                role: 'Growth Strategy Lead',
+                org: 'Gride Technology',
+                year: '2025 - Present',
+                desc: 'Leading "Project 2026" marketing initiative. Engineered automated lead journeys and CRM integration. Developed AI-powered marketing stack for scalable operations. Achieved consistent month-over-month growth in rider acquisition.'
+              },
+              {
                 role: 'Public Relations Specialist',
                 org: 'Kennesaw State University',
                 year: '2024',
-                desc: 'Led comprehensive PR campaigns increasing media visibility by 40%. Managed crisis communications and stakeholder relations.'
+                desc: 'Led comprehensive PR campaigns increasing media visibility by 40%. Managed crisis communications and stakeholder relations for university initiatives.'
               },
               {
                 role: 'Marketing Coordinator',
                 org: 'High Museum of Art',
                 year: '2023',
                 desc: 'Orchestrated digital marketing initiatives for major exhibitions. Collaborated with influencers and Emory University. Unified brand voice across 5 HubSpot hubs.'
-              },
-              {
-                role: 'Growth Strategy',
-                org: 'Gride Technology',
-                year: '2025',
-                desc: 'Engineered automated lead journeys and CRM integration. Developed AI-powered marketing stack for scalable operations.'
               }
             ].map((item, i) => (
               <motion.div
@@ -200,6 +214,89 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section id="case-studies" className="py-40 relative">
+        <div className="container">
+          <div className="mb-24">
+            <span className="text-primary text-xs font-bold uppercase tracking-widest mb-4 block">Selected Work</span>
+            <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter">
+              Case Studies<br/>
+              <span className="text-foreground/20">& Impact.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Case Study 1: Gride Technology */}
+            <Card className="bg-white/5 border-white/10 overflow-hidden group hover:border-primary/30 transition-all">
+              <div className="aspect-video relative overflow-hidden">
+                <img 
+                  src="/images/portfolio/gridescreenshot.png" 
+                  alt="Gride Technology App" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+                <div className="absolute bottom-6 left-6">
+                  <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest backdrop-blur-md border border-primary/20">
+                    Growth Strategy
+                  </span>
+                </div>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-display font-bold mb-4">Gride Technology: Project 2026</h3>
+                <p className="text-foreground/40 mb-6 leading-relaxed text-sm">
+                  Spearheaded the "Project 2026" marketing plan, focusing on cost-effective acquisition and operational excellence. Implemented a data-driven funnel using HubSpot and GA4, resulting in measurable growth in rider and driver sign-ups.
+                </p>
+                <div className="flex gap-4">
+                  <div className="text-center">
+                    <p className="text-xl font-bold text-primary">Q1</p>
+                    <p className="text-[10px] uppercase text-foreground/30">Foundation</p>
+                  </div>
+                  <div className="w-px bg-white/10"></div>
+                  <div className="text-center">
+                    <p className="text-xl font-bold text-primary">High</p>
+                    <p className="text-[10px] uppercase text-foreground/30">ROI Focus</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Case Study 2: TikTok Analytics */}
+            <Card className="bg-white/5 border-white/10 overflow-hidden group hover:border-primary/30 transition-all">
+              <div className="aspect-video relative overflow-hidden">
+                <img 
+                  src="/images/portfolio/Screenshot2025-12-20at2.39.18PM.png" 
+                  alt="TikTok Analytics" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+                <div className="absolute bottom-6 left-6">
+                  <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest backdrop-blur-md border border-primary/20">
+                    Social Analytics
+                  </span>
+                </div>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-display font-bold mb-4">Social Media Growth</h3>
+                <p className="text-foreground/40 mb-6 leading-relaxed text-sm">
+                  Executed a consistent content strategy on TikTok leading to steady follower growth and engagement throughout 2025. Leveraged analytics to refine creative direction and optimize cross-platform campaigns.
+                </p>
+                <div className="flex gap-4">
+                  <div className="text-center">
+                    <p className="text-xl font-bold text-primary">Positive</p>
+                    <p className="text-[10px] uppercase text-foreground/30">Net Growth</p>
+                  </div>
+                  <div className="w-px bg-white/10"></div>
+                  <div className="text-center">
+                    <p className="text-xl font-bold text-primary">100%</p>
+                    <p className="text-[10px] uppercase text-foreground/30">Consistency</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
