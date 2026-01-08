@@ -159,7 +159,7 @@ export default function Home() {
               
               <div className="space-y-6">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] border-4 border-[#D48C44] group">
-                  <img src="/images/portfolio/IMG_6995.jpg" alt="After Transformation" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src="/images/portfolio/gridesprinter.jpg" alt="After Transformation" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-6 left-6 bg-[#D48C44] text-white px-6 py-2 rounded-full text-base font-medium shadow-lg">After</div>
                 </div>
                 <div className="text-center">
