@@ -186,6 +186,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Visual Campaigns Section */}
+      <section id="visuals" className="py-32 border-t border-white/5">
+        <div className="container">
+          <div className="mb-20 max-w-2xl">
+            <h2 className="text-4xl md:text-5xl font-display font-medium mb-6">Visual Campaigns</h2>
+            <p className="text-foreground/50 leading-relaxed">
+              A curated gallery of creative direction, brand identity, and social media assets designed to drive engagement and build community.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Item 1: Gridesgiving */}
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-lg bg-white/5">
+              <img 
+                src="/images/portfolio/IMG_6995.jpg" 
+                alt="Gridesgiving Campaign" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                <span className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Campaign</span>
+                <h4 className="text-xl font-display font-medium text-white">Gridesgiving Special</h4>
+              </div>
+            </div>
+
+            {/* Item 2: App Interface */}
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-lg bg-white/5">
+              <img 
+                src="/images/portfolio/GrideLogoandMobileAppDisplay.png" 
+                alt="App Interface Design" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                <span className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Product Design</span>
+                <h4 className="text-xl font-display font-medium text-white">Mobile Experience</h4>
+              </div>
+            </div>
+
+            {/* Item 3: Social Content */}
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-lg bg-white/5">
+              <img 
+                src="/images/portfolio/IMG_6998.jpg" 
+                alt="Social Media Content" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                <span className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Social Media</span>
+                <h4 className="text-xl font-display font-medium text-white">Viral Content Strategy</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-32">
         <div className="container max-w-4xl text-center">
