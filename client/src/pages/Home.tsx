@@ -189,7 +189,7 @@ export default function Home() {
               <Button 
                 size="lg" 
                 className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base"
-                onClick={() => window.open("https://www.linkedin.com/in/angelo-parker-1002", "_blank")}
+                onClick={() => window.open("https://www.linkedin.com/in/angelo-parker-73638b1b8", "_blank")}
               >
                 Connect on LinkedIn <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -792,10 +792,10 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center gap-6 pt-8">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/angelo-parker-73638b1b8" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="mailto:Angeloparkeruwg@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
               <Mail className="w-6 h-6" />
             </a>
           </div>
